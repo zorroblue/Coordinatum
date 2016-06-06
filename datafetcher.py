@@ -19,7 +19,6 @@ class FetchCoordinates:
 		try:
 			print 'Fetching data...'
 			data=urllib.urlopen(url).read()
-#			print data
                         
 		except:
 			return 'Data not found'
@@ -31,11 +30,5 @@ class FetchCoordinates:
 				js=None
 		if 'status' not in js or js['status']!='OK':
 			return "Failure in parsing data"
-			
-		#print 'Json formatted data...\n'
-		#format_data=json.dumps(js,indent=4)
-		#print json.dumps(js,indent=4)	
 		
 		return str(js['results'][0]['geometry']['location']['lat'])+","+str(js['results'][0]['geometry']['location']['lng'])
-		#print js['results']
-		print 'Done!'

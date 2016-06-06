@@ -7,12 +7,9 @@ def call_for_parsing_():
 	print query.get()
 	data=query.get()
 	result=FetchCoordinates(data).__execute__()
-	print "HI"
 	result_text['text']=result
-	print "BYE"
 
-def yolo():
-	result_text['text']="YOLO"
+
 top=Tk()
 top.geometry('750x500')
 top.title('Coordinatum')
@@ -26,5 +23,4 @@ new_label=Label(top,text='Result:',font='Roboto -12 bold italic')
 new_label.pack()
 result_text=Label(top,text="No")
 result_text.pack()
-yolo()
 mainloop()
