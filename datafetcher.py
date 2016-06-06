@@ -2,7 +2,7 @@ import urllib
 import json
 import os
 
-class FetchWeather:
+class FetchCoordinates:
 
 	def __init__(self,cityname):
 		 #constructor
@@ -19,7 +19,8 @@ class FetchWeather:
 		try:
 			print 'Fetching data...'
 			data=urllib.urlopen(url).read()
-			print data
+#			print data
+                        
 		except:
 			return 'Data not found'
 
@@ -31,14 +32,10 @@ class FetchWeather:
 		if 'status' not in js or js['status']!='OK':
 			return "Failure in parsing data"
 			
-		print 'Json formatted data...\n'
-		format_data=json.dumps(js,indent=4)
-		print json.dumps(js,indent=4)
-		try:
-			filename=open('samplejsondata.txt','a')
-			filename.write(data+'\n\n\n')
-			filename.close()
-		except:
-			print 'Not written'
+		#print 'Json formatted data...\n'
+		#format_data=json.dumps(js,indent=4)
+		#print json.dumps(js,indent=4)	
 		
-		return 'Done!'
+		return str(js['results'][0]['geometry']['location']['lat'])+","+str(js['results'][0]['geometry']['location']['lng'])
+		#print js['results']
+		print 'Done!'

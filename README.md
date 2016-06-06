@@ -1,5 +1,4 @@
- <b>UNDER PROGRESS!!</b>
 
-This is a basic project of a weather app written in Python using the Tkinter library for GUI work.
+This is a basic project of a coordinate finder written in Python using the Google Maps API.
 
-Just realized I didn't finish this. :(
+
